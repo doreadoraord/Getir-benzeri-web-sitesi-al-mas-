@@ -1,0 +1,325 @@
+/* Genel Ayarlar */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #5d3ebc, #6f4ce6);
+    color: white;
+    text-align: center;
+}
+
+/* Üst Menü */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4c3398; /* Koyu mor şerit */
+    padding: 10px 20px;
+    position: fixed; /* Sayfanın en üstüne sabitler */
+    top: 0;
+    width: 100%; /* Tam genişlik */
+    z-index: 10; /* Üstte kalması için */
+}
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+    cursor: pointer;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+
+
+/* Logo ve Ana Bölüm */
+/* Logo ve Ana Bölüm */
+.hero {
+    margin-top: 60px;
+    padding: 20px 20px;
+    display: flex;
+    flex-direction: row; /* Yatay hizalama */
+    justify-content: space-between; /* Logo ve formu aralarındaki boşlukla yerleştirir */
+    align-items: flex-start; /* Logo ve başlık ile formun üst kenarlarını hizalar */
+    text-align: left;
+    margin-left: 200px;
+}
+
+/* Logo kısmı */
+.logo .circle {
+    width: 150px;
+    height: 150px;
+    background-color: #ffd300;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px; /* Başlık ile logo arasındaki boşluk */
+    font-size: 24px;
+    font-weight: bold;
+    color: #5d3ebc;
+    position: relative;
+}
+
+.logo .circle small {
+    position: absolute;
+    bottom: 10px;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* H1 - "Dakikalar içinde kapında" yazısını sola hizalayarak, logo altına alıyoruz */
+h1 {
+    margin-top: 200px; /* Logo ile başlık arasındaki boşluk */
+    font-size: 24px;
+    font-weight: normal;
+    text-align: right; /* Metni sola hizala */
+    margin-right:auto;
+
+
+}
+
+/* Giriş Formu */
+.login-box {
+    background-color: white;
+    color: rgb(96, 37, 205);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin-top: 0; /* Giriş formunu yukarıda hizalayacak */
+    text-align: center;
+    margin-left:1000px;
+    margin-bottom: 50px;
+    margin-top: -200px ;
+    
+}
+
+
+/* Footer */
+footer {
+    background-color: #5d3ebc; /* Ana arka plan rengini eşitle */
+    padding: 20px;
+    color: white;
+    text-align: center;
+}
+
+.cookies {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.cookies button {
+    background-color: #5d3ebc;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.cookies button:hover {
+    background-color: #6f4ce6;
+}
+
+/* Giriş yap/Kayıt ol butonları */
+.navbar-right {
+    display: flex;
+    flex-direction: row;  /* Yatay hizalama */
+    position: absolute;    /* Sağ üstte konumlandır */
+    top: 10px;
+    right: 20px;           /* Sağdan 20px mesafe */
+    gap: 15px;             /* Butonlar arasındaki boşluk */
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+.navbar-right button {
+    background-color: #5d3ebc;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px; 
+    height: 40px;  
+}
+
+.navbar-right button:hover {
+    background-color: #6f4ce6;
+}
+
+.cookie-notice {
+    background-color: #4c3398;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    z-index: 100; /* Üstte kalmasını sağlamak için */
+    display: block; /* Başlangıçta görünür */
+}
+
+.cookie-notice p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.cookies-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.cookies-buttons button {
+    background-color: #5d3ebc;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.cookies-buttons button:hover {
+    background-color: #6f4ce6;
+}
+
+/* Menü Butonları */
+.menu-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.menu-buttons button {
+    background-color: #4c3398;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-buttons button:hover {
+    background-color: #5d3ebc; /* Ana arka plan rengi */
+}
+
+/* Kategoriler */
+.categories-container {
+    background-color: #4c3398; /* Mor arka plan */
+    padding: 40px 0; /* Kategoriler bölümünün üst ve alt boşlukları */
+    margin-top: 50px; /* Sayfanın üst kısmından uzaklık */
+}
+
+.categories {
+    display: flex;
+    gap: 20px; /* Kategoriler arasındaki boşluk */
+    flex-wrap: wrap; /* Küçük ekranlarda taşarsa alt satıra geç */
+    justify-content: center; /* Kategorileri ortala */
+    background-color: white; /* Kategoriler arka planı beyaz */
+    padding: 20px; /* İçerik ile kenar arasında boşluk */
+    border-radius: 10px; /* Köşeleri yuvarlama */
+}
+
+.category {
+    text-align: center; /* Görsel ve metni ortala */
+    cursor: pointer;
+    transition: transform 0.3s ease, color 0.3s ease;
+    flex: 1; /* Eşit genişlik için */
+    max-width: 100px; /* Kategorilerin maksimum genişliği */
+}
+
+.category img {
+    width: 60px; /* Görsel boyutu */
+    height: 60px;
+    object-fit: contain; /* Görüntü bozulmaz */
+    margin-bottom: 10px; /* Görsel ve metin arasındaki boşluk */
+    display: block; /* Altındaki metinle hizalamayı garantile */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.category span {
+    font-size: 14px;
+    color: #4c3398; /* Mor yazı */
+}
+
+.category:hover {
+    transform: scale(1.1); /* Hafif büyüme efekti */
+}
+
+.category:hover span {
+    color: #5d3ebc; /* Hover rengi */
+}
+
+/* İndirme Bölümü */
+.download-section {
+    background-color: #ffffff; /* Mor arka plan */
+    padding: 40px 20px;
+    text-align: center;
+    color: #4c3398;
+    border-radius: 100px;
+    margin: 0px 0; /* Üst ve alt boşluk */
+}
+
+.download-section h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.store-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Butonlar arasındaki boşluk */
+}
+
+.app-store-btn, .play-store-btn {
+    padding: 15px 30px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.3s ease;
+}
+
+.app-store-btn {
+    background-color: #4c3398; /* App Store için mavi renk */
+}
+
+.play-store-btn {
+    background-color: #4c3398; /* Play Store için mavi renk */
+}
+
+.app-store-btn:hover {
+    background-color: #4c3398; /* App Store butonunda hover efekti */
+}
+
+.play-store-btn:hover {
+    background-color: #4c3398; /* Play Store butonunda hover efekti */
+}
+
+.modal {
+    background-color: rgba(0, 0, 0, 0.7); /* Daha koyu bir arka plan */
+}
+
+
+

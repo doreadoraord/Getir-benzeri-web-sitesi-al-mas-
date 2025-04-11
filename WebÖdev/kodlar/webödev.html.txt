@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getir</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="navbar">
+
+        
+        
+            <div class="menu-buttons">
+                <a href="webödev.html">
+                    <button>getir</button> 
+                </a>
+
+                <a href="getiryemek.html">
+                    <button>getiryemek</button> 
+                </a>
+                
+                
+                <button>getirbüyük</button>
+                <button>getirsu</button>
+                <button>getirçarşı</button>
+            </div>
+
+            
+
+            <div class="navbar-right">
+                <span><div class="language-selector">
+                    <button id="languageBtn">🌐 Türkçe (TR)</button>
+                </div>
+                
+                <!-- Modal Pencere -->
+                <div id="languageModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Dil Seç</h2>
+                        <div data-lang="tr" class="modal-option">Türkçe (TR)</div>
+                        <div data-lang="en" class="modal-option">English (EN)</div>
+                        <div data-lang="de" class="modal-option">Deutsch (DE)</div>
+                        <button id="closeModal" class="modal-close">Kapat</button>
+                    </div>
+                </div>
+                
+                <script>
+                    const languageBtn = document.getElementById('languageBtn');
+                    const languageModal = document.getElementById('languageModal');
+                    const closeModal = document.getElementById('closeModal');
+                
+                    // Dil metinleri
+                    const translations = {
+                        tr: {
+                            title: "Dakikalar içinde kapında",
+                            loginOrSignup: "Giriş yap veya kayıt ol",
+                            acceptAll: "Tümünü Kabul Et",
+                            rejectAll: "Tümünü Reddet",
+                            cookiesInfo: "İnternet sitemizde deneyiminizi iyileştirmek, kişiselleştirmek ve ilgi alanlarınıza göre özelleştirilmiş reklam/pazarlama faaliyetleri yürütebilmek için çerezler kullanıyoruz.",
+                        },
+                        en: {
+                            title: "At your door in minutes",
+                            loginOrSignup: "Log in or Sign up",
+                            acceptAll: "Accept All",
+                            rejectAll: "Reject All",
+                            cookiesInfo: "We use cookies to improve your experience on our website, personalize content, and deliver tailored advertising/marketing.",
+                        },
+                        de: {
+                            title: "In Minuten an deiner Tür",
+                            loginOrSignup: "Anmelden oder Registrieren",
+                            acceptAll: "Alle Akzeptieren",
+                            rejectAll: "Alle Ablehnen",
+                            cookiesInfo: "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern, Inhalte zu personalisieren und gezielte Werbung/Marketing durchzuführen.",
+                        }
+                    };
+                
+                    // Modal aç
+                    languageBtn.addEventListener('click', () => {
+                        languageModal.style.display = "block";
+                    });
+                
+                    // Modal kapat
+                    closeModal.addEventListener('click', () => {
+                        languageModal.style.display = "none";
+                    });
+                
+                    // Dil seçimi ve sayfa çevirisi
+                    languageModal.addEventListener('click', (e) => {
+                        const selectedLang = e.target.dataset.lang;
+                        if (selectedLang) {
+                            languageBtn.textContent = `🌐 ${e.target.textContent}`;
+                            translatePage(selectedLang);
+                            languageModal.style.display = "none";
+                        }
+                    });
+                
+                    // Sayfa içeriğini çevir
+                    function translatePage(lang) {
+                        document.querySelector("h1").textContent = translations[lang].title;
+                        document.querySelector(".login-box p").textContent = translations[lang].loginOrSignup;
+                        document.querySelector(".cookies p").textContent = translations[lang].cookiesInfo;
+                        document.querySelector(".cookies button:nth-child(1)").textContent = translations[lang].acceptAll;
+                        document.querySelector(".cookies button:nth-child(2)").textContent = translations[lang].rejectAll;
+                    }
+                </script>
+
+                
+                
+                <style>
+                    /* Modal Genel */
+                    .modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1000;
+                    }
+                
+                    .modal-content {
+                        background: white;
+                        color:#6f4ce6;
+                        padding: 20px;
+                        border-radius: 10px;
+                        width: 300px;
+                        text-align: center;
+                    }
+                
+                    .modal-content h2 {
+                        margin-bottom: 20px;
+                    }
+                
+                    .modal-option {
+                        padding: 10px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        margin: 10px 0;
+                        cursor: pointer;
+                    }
+                
+                    .modal-option:hover {
+                        background-color: #f5f5f5;
+                    }
+                
+                    .modal-close {
+                        margin-top: 20px;
+                        padding: 10px 20px;
+                        background-color: #5d3ebc;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                
+                    .modal-close:hover {
+                        background-color: #6f4ce6;
+                    }
+                </style>
+                </span>
+
+
+
+                
+
+                <button id="loginBtn" class="back-btn">Giriş Yap</button>
+
+
+
+                <button id="kayitBtn" class="kayit-button">Kayıt Ol</button>
+
+                
+                    
+               
+                
+                                     
+            </div>
+        </nav>
+    </header>
+    <main class="hero">
+        <div class="logo">
+          
+            <div class="circle">
+                <span>getir</span>
+                <small>bi mutluluk</small>
+            </div>
+        </div>
+        <h1>Dakikalar İçinde Kapında</h1>
+        
+    </main>
+        <div class="login-box">
+            <p>Giriş Yap Veya Kayıt Ol</p>
+            <form>
+                <select>
+                    <option value="+90">+90</option>
+                    <option value="+90">🇹🇷 +90 Türkiye</option>
+                            <option value="+1">🇺🇸 +1 Amerika Birleşik Devletleri</option>
+                            <option value="+44">🇬🇧 +44 Birleşik Krallık</option>
+                            <option value="+49">🇩🇪 +49 Almanya</option>
+                            <option value="+33">🇫🇷 +33 Fransa</option>
+                            <option value="+39">🇮🇹 +39 İtalya</option>
+                            <option value="+34">🇪🇸 +34 İspanya</option>
+                            <option value="+31">🇳🇱 +31 Hollanda</option>
+                            <option value="+46">🇸🇪 +46 İsveç</option>
+                            <option value="+47">🇳🇴 +47 Norveç</option>
+                            <option value="+48">🇵🇱 +48 Polonya</option>
+                            <option value="+351">🇵🇹 +351 Portekiz</option>
+                            <option value="+41">🇨🇭 +41 İsviçre</option>
+                            <option value="+61">🇦🇺 +61 Avustralya</option>
+                            <option value="+55">🇧🇷 +55 Brezilya</option>
+                            <option value="+52">🇲🇽 +52 Meksika</option>
+                    </form>
+                </select>
+                <input id="phoneInput" 
+                type="text" 
+                placeholder="Telefon Numarası" 
+                maxlength="11" 
+                style="padding: 10px; border-radius: 5px; font-size: 14px; flex-grow: 1;" >
+                <button id="bttn" style="margin-top: 10px; padding: 10px; border-radius: 5px; background-color: #ffd300; color: #5d3ebc; font-size: 16px; cursor: pointer;">
+                    Telefon numarası ile devam et
+                    <script>
+                      
+                        var bttn = document.getElementById('bttn');
+                        bttn.onclick = function() {
+                            window.location.href ='getiranasayfa.html';} // Yeni sayfaya yönlendirme
+
+                            bttn.onclick = function() {
+        // Telefon numarasının 11 karakter olup olmadığını kontrol et
+        if (phoneInput.value.length === 11) {
+            window.location.href = 'getiranasayfa.html'; // Yeni sayfaya yönlendirme
+        } else {
+            alert("Lütfen geçerli bir telefon numarası girin."); // Geçerli telefon numarası girilmediyse uyarı
+        }
+    };
+                        
+                    </script>
+                </button>
+            </form>
+            <script>
+                const phoneInput = document.getElementById('phoneInput');
+            
+                // Başlangıçta 0 ile başlat
+                phoneInput.value = "0";
+            
+                phoneInput.addEventListener('input', function (e) {
+                    // Sadece sayılar yazılabilsin
+                    this.value = this.value.replace(/[^0-9]/g, '');
+            
+                    // 11 karakteri geçmesin
+                    if (this.value.length > 11) {
+                        this.value = this.value.slice(0, 11);
+                    }
+            
+                    // Başına otomatik "0" koy
+                    if (!this.value.startsWith("0")) {
+                        this.value = "0" + this.value;
+                    }
+                    
+                });
+            </script>
+        </div>
+    </main>
+        <footer>
+            <div class="cookie-notice">
+                <p>İnternet sitemizde deneyiminizi iyileştirmek, kişiselleştirmek ve ilgi alanlarınıza göre özelleştirilmiş reklam/pazarlama faaliyetleri yürütebilmek için çerezler kullanıyoruz. Kesinlikle Gerekli Çerezler dışındaki çerezlerin kullanımına ve bu çerezler aracılığıyla elde edilen kişisel verilerinizin yurt dışına aktarılmasına onay vermek için “Tümünü Kabul Et” butonuna; çerezler aracılığıyla elde edilen kişisel verilerinizin işlenmesine ilişkin tercihlerinizi yönetmek için ise “Çerezleri Yönet” butonuna tıklayabilirsiniz. Çerezler ile kişisel verilerinizin işlenmesine dair detaylı bilgi almak için Çerez Politikamızı ziyaret edebilirsiniz.</p>
+                <div class="cookies-buttons">
+                    <button id="accept-cookies">Tümünü Kabul Et</button>
+                    <button id="reject-cookies">Tümünü Reddet</button>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        document.getElementById("accept-cookies").addEventListener("click", function() {
+            document.querySelector(".cookie-notice").style.display = "none";
+        });
+    
+        document.getElementById("reject-cookies").addEventListener("click", function() {
+            document.querySelector(".cookie-notice").style.display = "none";
+        });
+    </script>
+<footer class="footer">
+    <h3>Kategoriler</h3>
+    <div class="categories">
+        <div class="category">
+            <img src="resimler/su.jpg" alt="İçecek">
+            <span>Su & İçecek</span>
+        </div>
+        <div class="category">
+            <img src= "resimler/atıştırmalık.jpeg"alt="Atıştırmalık">
+            <span>Atıştırmalık</span>
+        </div>
+        <div class="category">
+            <img src="resimler/meyve.jpg" alt="Meyve & Sebze">
+            <span>Meyve & Sebze</span>
+        </div>
+        <div class="category">
+            <img src="resimler/süt.jpg" alt="Süt Ürünleri">
+            <span>Süt Ürünleri</span>
+        </div>
+        <div class="category">
+            <img src="resimler/ekmek.jpg" alt="Fırından">
+            <span>Fırından</span>
+        </div>
+        <div class="category">
+            <img src="resimler/temel.jpg" alt="Temel Gıda">
+            <span>Temel Gıda</span>
+        </div>
+        <div class="category">
+            <img src="resimler/yemek.jpg" alt="Yemek">
+            <span>Yemek</span>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Getir'i İndirin Bölümü -->
+<section class="download-section">
+    <h2>Getir'i İndirin</h2>
+    <div class="store-buttons">
+        <img src="resimler/apps.jpg" alt="" height="40px" width="40px" margin-top="20px">
+        <a href="https://apps.apple.com/tr/app/getir-market-yemek-ve-dahas%C4%B1/id995280265?l=tr" target="_blank" >
+            <button class="app-store-btn">App Store Getir Uygulaması</button>
+        </a>
+        <img src="resimler/play.jpg" alt="" height="40px" width="40px" margin-top="20px">
+        <a href="https://play.google.com/store/apps/details?id=com.getir&hl=tr target="_blank">
+            <button class="play-store-btn">Play Store Getir Uygulaması</button>
+        </a>
+    </div>
+</section>
+
+<img style="margin-top: 50px; margin-left: 50px; margin-bottom: 50px" src="resimler/getir.jpg" width="200px" height="200px" >
+
+<style>
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+
+    .phone-input {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    #country-code {
+        height: 40px;
+        font-size: 16px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    #phone-number {
+        height: 40px;
+        font-size: 16px;
+        width: 200px;
+        border: 1px solid lightgray;
+        border-radius: 5px;
+        padding: 5px;
+    }
+
+    .form-button {
+        height: 40px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 0 20px;
+        cursor: pointer;
+    }
+
+    .form-button:hover {
+        background-color: #45a049;
+    }
+</style>
+
+
+
+<div id="loginModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Giriş Yap</h2>
+        <input type="tel" placeholder="Telefon Numarası" required>
+        <input type="password" placeholder="Şifre" required>
+        <button>Giriş Yap</button>
+    </div>
+</div>
+
+
+<script>
+    // Modal ve Butonlar
+    const modal = document.getElementById("loginModal");
+    const btn = document.getElementById("loginBtn");
+    const span = document.getElementsByClassName("close")[0];
+
+    // Giriş Yap Butonuna Tıklanınca Modal Açılsın
+    btn.onclick = function() {
+        modal.style.display = "block";
+    };
+
+    // Çarpıya Tıklanınca Modal Kapatılsın
+    span.onclick = function() {
+        modal.style.display = "none";
+    };
+
+    // Sayfa Dışına Tıklanırsa Modal Kapatılsın
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+
+<div id="KayitModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Kayıt Ol</h2>
+        <input type="text" placeholder="İsim" required>
+        <input type="text" placeholder="Soyisim" required>
+        <input type="email" placeholder="Mail" required>
+        <input type="tel" placeholder="Telefon Numarası" required>
+        <input type="password" placeholder="Şifre" required>
+        <button>Kayıt Ol</button>
+    </div>
+</div>
+
+
+<script>
+
+// Modal ve Butonlar
+const KayitModal = document.getElementById("KayitModal");
+const kayitBtn = document.getElementById("kayitBtn"); // Burada id'yi doğru yazıyoruz
+const span = document.getElementsByClassName("close")[0];
+
+// Kayıt Ol Butonuna Tıklanınca Modal Açılsın
+kayitBtn.onclick = function() {
+    KayitModal.style.display = "block"; // Modal'ı görünür yap
+};
+
+// Çarpıya Tıklanınca Modal Kapatılsın
+span.onclick = function() {
+    KayitModal.style.display = "none"; // Modal'ı gizle
+};
+
+// Sayfa Dışına Tıklanırsa Modal Kapatılsın
+window.onclick = function(event) {
+    if (event.target == KayitModal) { // Eğer tıklanan yer modal ise
+        KayitModal.style.display = "none"; // Modal'ı gizle
+    }
+};
+
+
+</script>
+<style>
+    /* Modal ve içerik */
+.modal {
+    display: none; /* Başlangıçta gizle */
+    position: fixed;
+    z-index: 1; /* En üstte görünsün */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Siyah, yarı saydam arka plan */
+}
+
+.modal-content {
+    background-color: white;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 400px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+</style>
+
+<!-- Login Modal -->
+<div id="loginModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Giriş Yap</h2>
+        <input type="tel" placeholder="Telefon Numarası" required>
+        <input type="password" placeholder="Şifre" required>
+        <button>Giriş Yap</button>
+    </div>
+</div>
+
+<!-- Signup Modal -->
+<div id="kayitModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Kayıt Ol</h2>
+        <input type="text" placeholder="İsim" required>
+        <input type="text" placeholder="Soyisim" required>
+        <input type="email" placeholder="Mail" required>
+        <input type="tel" placeholder="Telefon Numarası" required>
+        <input type="password" placeholder="Şifre" required>
+        <button>Kayıt Ol</button>
+    </div>
+</div>
+
+<script>
+    const loginModal = document.getElementById("loginModal");
+    const kayitModal = document.getElementById("kayitModal");
+    const loginBtn = document.getElementById("loginBtn");
+    const kayitBtn = document.getElementById("kayitBtn");
+    const closeButtons = document.querySelectorAll(".close");
+
+    loginBtn.onclick = function() {
+        loginModal.style.display = "block";
+    };
+
+    kayitBtn.onclick = function() {
+        kayitModal.style.display = "block";
+    };
+
+    closeButtons.forEach(closeBtn => {
+        closeBtn.onclick = function() {
+            closeBtn.closest('.modal').style.display = "none";
+        };
+    });
+
+    window.onclick = function(event) {
+        if (event.target == loginModal || event.target == kayitModal) {
+            loginModal.style.display = "none";
+            kayitModal.style.display = "none";
+        }
+    };
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

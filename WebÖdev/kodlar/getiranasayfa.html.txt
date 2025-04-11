@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getir</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="navbar2">
+           
+
+        
+        
+            <div class="menu-buttons">
+                <a href="webödev.html">
+                    <button>getir</button> 
+                </a>
+
+                <a href="getiryemek.html">
+                    <button>getiryemek</button> 
+                </a>
+                <button>getirbüyük</button>
+                <button>getirsu</button>
+                <button>getirçarşı</button>
+            </div>
+
+            <div class="navbar-right">
+                <span><div class="language-selector">
+                    <button id="languageBtn">🌐 Türkçe (TR)</button>
+                </div>
+
+            <!-- Modal Pencere -->
+            <div id="languageModal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <h2>Dil Seç</h2>
+                    <div data-lang="tr" class="modal-option">Türkçe (TR)</div>
+                    <div data-lang="en" class="modal-option">English (EN)</div>
+                    <div data-lang="de" class="modal-option">Deutsch (DE)</div>
+                    <button id="closeModal" class="modal-close">Kapat</button>
+                </div>
+            </div>
+            
+            <script>
+                const languageBtn = document.getElementById('languageBtn');
+                const languageModal = document.getElementById('languageModal');
+                const closeModal = document.getElementById('closeModal');
+            
+                // Dil metinleri
+                const translations = {
+                    tr: {
+                        title: "Dakikalar içinde kapında",
+                        loginOrSignup: "Giriş yap veya kayıt ol",
+                        acceptAll: "Tümünü Kabul Et",
+                        rejectAll: "Tümünü Reddet",
+                        cookiesInfo: "İnternet sitemizde deneyiminizi iyileştirmek, kişiselleştirmek ve ilgi alanlarınıza göre özelleştirilmiş reklam/pazarlama faaliyetleri yürütebilmek için çerezler kullanıyoruz.",
+                    },
+                    en: {
+                        title: "At your door in minutes",
+                        loginOrSignup: "Log in or Sign up",
+                        acceptAll: "Accept All",
+                        rejectAll: "Reject All",
+                        cookiesInfo: "We use cookies to improve your experience on our website, personalize content, and deliver tailored advertising/marketing.",
+                    },
+                    de: {
+                        title: "In Minuten an deiner Tür",
+                        loginOrSignup: "Anmelden oder Registrieren",
+                        acceptAll: "Alle Akzeptieren",
+                        rejectAll: "Alle Ablehnen",
+                        cookiesInfo: "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern, Inhalte zu personalisieren und gezielte Werbung/Marketing durchzuführen.",
+                    }
+                };
+            
+                // Modal aç
+                languageBtn.addEventListener('click', () => {
+                    languageModal.style.display = "block";
+                });
+            
+                // Modal kapat
+                closeModal.addEventListener('click', () => {
+                    languageModal.style.display = "none";
+                });
+            
+                // Dil seçimi ve sayfa çevirisi
+                languageModal.addEventListener('click', (e) => {
+                    const selectedLang = e.target.dataset.lang;
+                    if (selectedLang) {
+                        languageBtn.textContent = `🌐 ${e.target.textContent}`;
+                        translatePage(selectedLang);
+                        languageModal.style.display = "none";
+                    }
+                });
+            
+                // Sayfa içeriğini çevir
+                function translatePage(lang) {
+                    document.querySelector("h1").textContent = translations[lang].title;
+                    document.querySelector(".login-box p").textContent = translations[lang].loginOrSignup;
+                    document.querySelector(".cookies p").textContent = translations[lang].cookiesInfo;
+                    document.querySelector(".cookies button:nth-child(1)").textContent = translations[lang].acceptAll;
+                    document.querySelector(".cookies button:nth-child(2)").textContent = translations[lang].rejectAll;
+                }
+            </script>
+
+<style>
+    /* Modal Genel */
+    .modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+    }
+
+    .modal-content {
+        background: white;
+        color:#6f4ce6;
+        padding: 20px;
+        border-radius: 10px;
+        width: 300px;
+        text-align: center;
+    }
+
+    .modal-content h2 {
+        margin-bottom: 20px;
+    }
+
+    .modal-option {
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px 0;
+        cursor: pointer;
+    }
+
+    .modal-option:hover {
+        background-color: #f5f5f5;
+    }
+
+    .modal-close {
+        margin-top: 20px;
+        padding: 10px 20px;
+        background-color: #5d3ebc;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .modal-close:hover {
+        background-color: #6f4ce6;
+    }
+</style>
+</span>
+
+<button id="loginBtn" class="back-btn">Giriş Yap</button>
+
+<button id="kayitBtn" class="kayit-button">Kayıt Ol</button>
+
+<footer>
+    <div class="cookie-notice">
+        <p>İnternet sitemizde deneyiminizi iyileştirmek, kişiselleştirmek ve ilgi alanlarınıza göre özelleştirilmiş reklam/pazarlama faaliyetleri yürütebilmek için çerezler kullanıyoruz. Kesinlikle Gerekli Çerezler dışındaki çerezlerin kullanımına ve bu çerezler aracılığıyla elde edilen kişisel verilerinizin yurt dışına aktarılmasına onay vermek için “Tümünü Kabul Et” butonuna; çerezler aracılığıyla elde edilen kişisel verilerinizin işlenmesine ilişkin tercihlerinizi yönetmek için ise “Çerezleri Yönet” butonuna tıklayabilirsiniz. Çerezler ile kişisel verilerinizin işlenmesine dair detaylı bilgi almak için Çerez Politikamızı ziyaret edebilirsiniz.</p>
+        <div class="cookies-buttons">
+            <button id="accept-cookies">Tümünü Kabul Et</button>
+            <button id="reject-cookies">Tümünü Reddet</button>
+        </div>
+    </div>
+</footer>
+</body>
+<script>
+document.getElementById("accept-cookies").addEventListener("click", function() {
+    document.querySelector(".cookie-notice").style.display = "none";
+});
+
+document.getElementById("reject-cookies").addEventListener("click", function() {
+    document.querySelector(".cookie-notice").style.display = "none";
+});
+</script>
+
+<div class="search-navbar">
+    <input type="text" placeholder="Ürün Ara">
+    <button>Arama</button>
+</div>
+
+
+        

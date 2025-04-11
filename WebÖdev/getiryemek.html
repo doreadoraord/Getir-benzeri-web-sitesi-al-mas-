@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getir</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+
+<body>
+    <header class="navbar">
+
+       
+        
+            <div class="menu-buttons">
+                <a href="webödev.html">
+                    <button>getir</button> 
+                </a>
+                
+                <button>getiryemek</button>
+                <button>getirbüyük</button>
+                <button>getirsu</button>
+                <button>getirçarşı</button>
+            </div>
+            <div class="navbar-right">
+                <span><div class="language-selector">
+                    <button id="languageBtn">🌐 Türkçe (TR)</button>
+                </div>
+                
+                <!-- Modal Pencere -->
+                <div id="languageModal" class="modal" style="display: none;">
+                    <div class="modal-content">
+                        <h2>Dil Seç</h2>
+                        <div data-lang="tr" class="modal-option">Türkçe (TR)</div>
+                        <div data-lang="en" class="modal-option">English (EN)</div>
+                        <div data-lang="de" class="modal-option">Deutsch (DE)</div>
+                        <button id="closeModal" class="modal-close">Kapat</button>
+                    </div>
+                </div>
+                
+                <script>
+                    const languageBtn = document.getElementById('languageBtn');
+                    const languageModal = document.getElementById('languageModal');
+                    const closeModal = document.getElementById('closeModal');
+                
+                    // Dil metinleri
+                    const translations = {
+                        tr: {
+                            title: "Dakikalar içinde kapında",
+                            loginOrSignup: "Giriş yap veya kayıt ol",
+                            acceptAll: "Tümünü Kabul Et",
+                            rejectAll: "Tümünü Reddet",
+                            cookiesInfo: "İnternet sitemizde deneyiminizi iyileştirmek, kişiselleştirmek ve ilgi alanlarınıza göre özelleştirilmiş reklam/pazarlama faaliyetleri yürütebilmek için çerezler kullanıyoruz.",
+                        },
+                        en: {
+                            title: "At your door in minutes",
+                            loginOrSignup: "Log in or Sign up",
+                            acceptAll: "Accept All",
+                            rejectAll: "Reject All",
+                            cookiesInfo: "We use cookies to improve your experience on our website, personalize content, and deliver tailored advertising/marketing.",
+                        },
+                        de: {
+                            title: "In Minuten an deiner Tür",
+                            loginOrSignup: "Anmelden oder Registrieren",
+                            acceptAll: "Alle Akzeptieren",
+                            rejectAll: "Alle Ablehnen",
+                            cookiesInfo: "Wir verwenden Cookies, um Ihre Erfahrung auf unserer Website zu verbessern, Inhalte zu personalisieren und gezielte Werbung/Marketing durchzuführen.",
+                        }
+                    };
+                
+                    // Modal aç
+                    languageBtn.addEventListener('click', () => {
+                        languageModal.style.display = "block";
+                    });
+                
+                    // Modal kapat
+                    closeModal.addEventListener('click', () => {
+                        languageModal.style.display = "none";
+                    });
+                
+                    // Dil seçimi ve sayfa çevirisi
+                    languageModal.addEventListener('click', (e) => {
+                        const selectedLang = e.target.dataset.lang;
+                        if (selectedLang) {
+                            languageBtn.textContent = `🌐 ${e.target.textContent}`;
+                            translatePage(selectedLang);
+                            languageModal.style.display = "none";
+                        }
+                    });
+                
+                    // Sayfa içeriğini çevir
+                    function translatePage(lang) {
+                        document.querySelector("h1").textContent = translations[lang].title;
+                        document.querySelector(".login-box p").textContent = translations[lang].loginOrSignup;
+                        document.querySelector(".cookies p").textContent = translations[lang].cookiesInfo;
+                        document.querySelector(".cookies button:nth-child(1)").textContent = translations[lang].acceptAll;
+                        document.querySelector(".cookies button:nth-child(2)").textContent = translations[lang].rejectAll;
+                    }
+                </script>
+                
+                <style>
+                    /* Modal Genel */
+                    .modal {
+                        position: fixed;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        background-color: rgba(255, 255, 255, 0.5);
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        z-index: 1000;
+                    }
+                
+                    .modal-content {
+                        background: white;
+                        color:#6f4ce6;
+                        padding: 20px;
+                        border-radius: 10px;
+                        width: 300px;
+                        text-align: center;
+                    }
+                
+                    .modal-content h2 {
+                        margin-bottom: 20px;
+                    }
+                
+                    .modal-option {
+                        padding: 10px;
+                        border: 1px solid #ddd;
+                        border-radius: 5px;
+                        margin: 10px 0;
+                        cursor: pointer;
+                    }
+                
+                    .modal-option:hover {
+                        background-color: #f5f5f5;
+                    }
+                
+                    .modal-close {
+                        margin-top: 20px;
+                        padding: 10px 20px;
+                        background-color: #5d3ebc;
+                        color: white;
+                        border: none;
+                        border-radius: 5px;
+                        cursor: pointer;
+                    }
+                
+                    .modal-close:hover {
+                        background-color: #6f4ce6;
+                    }
+                </style>
+                </span>
+                <a href="giris.html">
+                    <button class="back-btn">Giriş Yap</button>
+                </a>
+
+                <a href="kayitol.html">
+                    <button class="gobutton">Kayıt Ol</button>
+                </a>
+                
+                
+            </div>
+        </nav>
+    </header>
+    <main class="hero">
+        <div style="text-align: center; margin-top: 20px; padding: 50px 0; background-color: white;">
+            <img src="resimler/burgerr.gif" alt="Whopper" style="width: 400px; height: auto;">
+        </div>
+        
+    </main>
+        <div class="login-box">
+            <p>Adresine Getiren Restoranları Gör</p>
+            <select> 
+                <option value="00">Adres Seçiniz</option>
+                <option value="01">Adana</option>
+                <option value="01">Adıyaman</option>
+                <option value="01">Afyon</option>
+                <option value="01">Ağrı</option>
+                <option value="01">Amasya</option>
+                <option value="01">Ankara</option>
+                <option value="01">Antalya</option>
+                <option value="01">Artvin</option>
+                <option value="01">Aydın</option>
+                <option value="01">Balıkesir</option>
+                <option value="01">Bilecik</option>
+                <option value="01">Bingöl</option>
+                <option value="01">Bitlis</option>
+                <option value="01">Bolu</option>
+                <option value="01">Burdur</option>
+                <option value="01">Bursa</option>
+                <option value="01">Çanakkale</option>
+                <option value="01">Çankırı</option>
+                <option value="01">Çorum</option>
+                <option value="01">Denizli</option>
+                <option value="01">Diyarbakır</option>
+                <option value="01">Edirne</option>
+                <option value="01">Elazığ</option>
+                <option value="01">Erzincan</option>
+                <option value="01">Erzurum</option>
+                <option value="01">Eskişehir</option>
+                <option value="01">Gaziantep</option>
+                <option value="01">Giresun</option>
+                <option value="01">Gümüşhane</option>
+                <option value="01">Hakkari</option>
+                <option value="01">Hatay</option>
+                <option value="01">Isparta</option>
+                <option value="01">Mersin</option>
+                <option value="01">İstanbul</option>
+                <option value="01">İzmir</option>
+                <option value="01">Kars</option>
+                <option value="01">Kastamonu</option>
+                <option value="01">Kayseri</option>
+                <option value="01">Kırklareli</option>
+                <option value="01">Kırşehir</option>
+                <option value="01">Kocaeli</option>
+                <option value="01">Konya</option>
+                <option value="01">Kütahya</option>
+                <option value="01">Malatya</option>
+                <option value="01">Manisa</option>
+                <option value="01">Kahramanmaraş</option>
+                <option value="01">Mardin</option>
+                <option value="01">Muğla</option>
+                <option value="01">Muş</option>
+                <option value="01">Nevşehir</option>
+                <option value="01">Niğde</option>
+                <option value="01">Ordu</option>
+                <option value="01">Rize</option>
+                <option value="01">Sakarya</option>
+                <option value="01">Samsun</option>
+                <option value="01">Siirt</option>
+                <option value="01">Sinop</option>
+                <option value="01">Sivas</option>
+                <option value="01">Tekirdağ</option>
+                <option value="01">Tokat</option>
+                <option value="01">Trabzon</option>
+                <option value="01">Tunceli</option>
+                <option value="01">Şanlıurfa</option>
+                <option value="01">Uşak</option>
+                <option value="01">Van</option>
+                <option value="01">Yozgat</option>
+                <option value="01">Zonguldak</option>
+                <option value="01">Aksaray</option>
+                <option value="01">Bayburt</option>
+                <option value="01">Karaman</option>
+                <option value="01">Kırıkkale</option>
+                <option value="01">Batman</option>
+                <option value="01">Şırnak</option>
+                <option value="01">Bartın</option>
+                <option value="01">Ardahan</option>
+                <option value="01">Iğdır</option>
+                <option value="01">Yalova</option>
+                <option value="01">Karabük</option>
+                <option value="01">Kilis</option>
+                <option value="01">Osmaniye</option>
+                <option value="01">Düzce</option>
+            </select>
+                
+            </select>
+            <p>Giriş Yap Veya Kayıt ol</p>
+            <form>
+                <select>
+                    <option value="+90">+90</option>
+                    <option value="+90">🇹🇷 +90 Türkiye</option>
+                            <option value="+1">🇺🇸 +1 Amerika Birleşik Devletleri</option>
+                            <option value="+44">🇬🇧 +44 Birleşik Krallık</option>
+                            <option value="+49">🇩🇪 +49 Almanya</option>
+                            <option value="+33">🇫🇷 +33 Fransa</option>
+                            <option value="+39">🇮🇹 +39 İtalya</option>
+                            <option value="+34">🇪🇸 +34 İspanya</option>
+                            <option value="+31">🇳🇱 +31 Hollanda</option>
+                            <option value="+46">🇸🇪 +46 İsveç</option>
+                            <option value="+47">🇳🇴 +47 Norveç</option>
+                            <option value="+48">🇵🇱 +48 Polonya</option>
+                            <option value="+351">🇵🇹 +351 Portekiz</option>
+                            <option value="+41">🇨🇭 +41 İsviçre</option>
+                            <option value="+61">🇦🇺 +61 Avustralya</option>
+                            <option value="+55">🇧🇷 +55 Brezilya</option>
+                            <option value="+52">🇲🇽 +52 Meksika</option>
+                    </form>
+                </select>
+                <input id="phoneInput" 
+                type="text" 
+                placeholder="Telefon Numarası" 
+                maxlength="11" 
+                style="padding: 10px; border-radius: 5px; font-size: 14px; flex-grow: 1;" >
+                <button style="margin-top: 10px; padding: 10px; border-radius: 5px; background-color: #ffd300; color: #5d3ebc; font-size: 16px; cursor: pointer;">
+                    Telefon numarası ile devam et
+                </button>
+            </form>
+            <script>
+                const phoneInput = document.getElementById('phoneInput');
+            
+                // Başlangıçta 0 ile başlat
+                phoneInput.value = "0";
+            
+                phoneInput.addEventListener('input', function (e) {
+                    // Sadece sayılar yazılabilsin
+                    this.value = this.value.replace(/[^0-9]/g, '');
+            
+                    // 11 karakteri geçmesin
+                    if (this.value.length > 11) {
+                        this.value = this.value.slice(0, 11);
+                    }
+            
+                    // Başına otomatik "0" koy
+                    if (!this.value.startsWith("0")) {
+                        this.value = "0" + this.value;
+                    }
+                });
+            </script>
+        </div>
+    </main>
+        <footer>
+            <div class="cookie-notice">
+                <p>İnternet sitemizde deneyiminizi iyileştirmek, kişiselleştirmek ve ilgi alanlarınıza göre özelleştirilmiş reklam/pazarlama faaliyetleri yürütebilmek için çerezler kullanıyoruz. Kesinlikle Gerekli Çerezler dışındaki çerezlerin kullanımına ve bu çerezler aracılığıyla elde edilen kişisel verilerinizin yurt dışına aktarılmasına onay vermek için “Tümünü Kabul Et” butonuna; çerezler aracılığıyla elde edilen kişisel verilerinizin işlenmesine ilişkin tercihlerinizi yönetmek için ise “Çerezleri Yönet” butonuna tıklayabilirsiniz. Çerezler ile kişisel verilerinizin işlenmesine dair detaylı bilgi almak için Çerez Politikamızı ziyaret edebilirsiniz.</p>
+                <div class="cookies-buttons">
+                    <button id="accept-cookies">Tümünü Kabul Et</button>
+                    <button id="reject-cookies">Tümünü Reddet</button>
+                </div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        document.getElementById("accept-cookies").addEventListener("click", function() {
+            document.querySelector(".cookie-notice").style.display = "none";
+        });
+    
+        document.getElementById("reject-cookies").addEventListener("click", function() {
+            document.querySelector(".cookie-notice").style.display = "none";
+        });
+    </script>
+<footer class="footer">
+    <h3>Mutfaklar</h3>
+    <div class="categories">
+        <div class="category">
+            <img src="resimler/börek.jpg" alt="Su & İçecek">
+            <span>Börek</span>
+        </div>
+        <div class="category">
+            <img src="resimler/denizürünleri.jpg" alt="Atıştırmalık">
+            <span>Deniz Ürünleri</span>
+        </div>
+        <div class="category">
+            <img src="resimler/burger.jpg" alt="Meyve & Sebze">
+            <span>Burger</span>
+        </div>
+        <div class="category">
+            <img src="resimler/döner.jpg" alt="Süt Ürünleri">
+            <span>Döner</span>
+        </div>
+        <div class="category">
+            <img src="resimler/dünyamutfağı.jpg" alt="Fırından">
+            <span>Dünya Mutfağı</span>
+        </div>
+        <div class="category">
+            <img src="resimler/evyemekleri.jpg" alt="Temel Gıda">
+            <span>Ev Yemekleri</span>
+        </div>
+        <div class="category">
+            <img src="resimler/kahvaltı.jpeg" alt="Yemek">
+            <span>Kahvaltı</span>
+        </div>
+        <div class="category">
+            <img src="resimler/kebap.jpg" alt="Yemek">
+            <span>Kebap</span>
+        </div>
+    </div>
+</footer>
+
+
+<!-- Getir'i İndirin Bölümü -->
+<section class="download-section">
+    <h2>Getir'i İndirin</h2>
+    <div class="store-buttons">
+        <img src="resimler/apps.jpg" alt="" height="40px" width="40px" margin-top="20px">
+        <a href="https://apps.apple.com/tr/app/getir/id1363133106" target="_blank" >
+            <button class="app-store-btn">App Store Getir Uygulaması</button>
+        </a>
+        <img src="resimler/play.jpg"alt="" height="40px" width="40px" margin-top="20px">
+        <a href="https://play.google.com/store/search?q=getir&c=apps" target="_blank">
+            <button class="play-store-btn">Play Store Getir Uygulaması</button>
+        </a>
+    </div>
+</section>
+
+<img style="margin-top: 50px; margin-left: 50px; margin-bottom: 50px" src="resimler/ggetir.jpg" width="200px" height="200px" >
+
+
+   
+    
+    
+    
+
+</html>
